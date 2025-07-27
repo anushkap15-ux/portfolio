@@ -17,7 +17,7 @@ html,body{
 .navbar{
     margin: 0;
     padding: 0;
-    position: fixed;
+    position: absolute;
     top:0;
     left:0;
     width: 100%;
@@ -40,8 +40,8 @@ html,body{
     margin-right: 2px;
 }
 .navbar a:hover{
-
-    text-decoration: underline;
+  color: #8D742F;
+    opacity: 0.7;;
 }
 /** herosection**/
   .herosection{
@@ -58,25 +58,29 @@ html,body{
     font-size: 100px;
     text-align: left;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-weight: 500;
+    font-weight: bold;
 }
 .hero-para{
     height: 40px;
     width:800px ;
     position: absolute; /* place text inside */
     top: 63%;
-    left: 35%;
+    left: 33%;
     transform: translate(-50%, -50%); /* center */
     color: #8D742F ; /* better contrast */
     font-size: 25px;
     text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
     
 }
 .check-work-button{
     position: absolute;
-    left: 8%;
+    left: 7%;
     top:80%;
      height: 20px;
+     background-color: blanchedalmond;
+     border: 2px solid blanchedalmond ;
+     font-family: Arial, Helvetica, sans-serif;
 }
 .check-work-button a{
     font-size: 20px;
@@ -90,4 +94,41 @@ html,body{
     opacity: 0.7;
 
 }
+/**work**/
+/** about section**/
+.about_section{
+    opacity: 0.9;
+    height: 700px;
+    background-color: white;
+}
+.section-title{
+    position: relative;
+    top : 0.1rem;
+    color :#8D742F;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: xx-large;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+.about-content{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.about-photo{
+    position: relative;
+   
+    height: 500px;
+    width: 400px ;
+    background-image: url(about-img.png);
+    background-size: cover;
+}
+.about-para{
+    width: 500px;
+    height: 110px;
+
+
+}
+
    
