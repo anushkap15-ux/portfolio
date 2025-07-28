@@ -99,13 +99,14 @@ html,body{
 /**work**/
 .work{
     position: relative;
-    height: 800px;
+    height: 600px;
     text-align: center;
-  background-color: white;
+  background-color: #DDDAD0;
+
 
 }
 .work_heading {
-        position: relative;
+    position: relative;
     top : 0.1rem;
     color :#8D742F;
     text-align: center;
@@ -142,14 +143,11 @@ html,body{
     transition: all 0.3s ease-in-out;
     border-radius: 10px;
 }
-.git-icon{
-    align-items: left;
-}
 .git-icon i{
     font-size: 50px;
     color: black;
     text-align: left;
-    color: #8D742F;
+    color: black;
 
 }
 .content_card1{
@@ -167,7 +165,7 @@ html,body{
     font-size: 20px;
 }
 .card-box:hover{
-        background-color: #FFDBDB;
+    background-color: #FFDBDB;
     transform: scale(1.05); /* makes it pop */
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3); /* adds shadow */
     opacity: 1;
@@ -177,7 +175,7 @@ html,body{
     font-size: 15px;
     font-family: Arial, Helvetica, sans-serif;
     margin-bottom: 20px;
-    color: #594100;
+    color: black;
 }
 .see-more p:hover{
     color: #8D742F;
@@ -187,7 +185,7 @@ html,body{
 .about_section{
     opacity: 0.9;
     height: 600px;
-    background-color: white;
+    background-color: #DDDAD0;
 }
 .section-title{
     position: relative;
@@ -231,6 +229,7 @@ html,body{
   width: 100%;
   padding: 40px 60px;
   font-family: Arial, sans-serif;
+  background-color: #DDDAD0;
 }
 
 .skills-container {
@@ -287,7 +286,7 @@ html,body{
 
 .skill-bar .fill {
   height: 100%;
-  background-color: #bdcdff;
+  background-color: #2A4759;
   border-radius: 6px;
   transition: width 0.5s ease;
 }
@@ -310,11 +309,12 @@ html,body{
   flex-direction: column;
   align-items: center;
   padding: 60px 20px;
+  background-color: #DDDAD0;
 }
 
 .contact-title {
   font-size: 2.2rem;
-  color: #3366ff;
+  color: #2A4759;
   font-weight: bold;
   margin-bottom: 30px;
   position: relative;
@@ -328,7 +328,7 @@ html,body{
   transform: translateX(-50%);
   width: 60px;
   height: 3px;
-  background-color: #3366ff;
+  background-color: #2A4759;
   border-radius: 5px;
 }
 
@@ -350,7 +350,7 @@ html,body{
 }
 
 .contact-form button {
-  background-color: #3366ff;
+  background-color: #2A4759;
   color: white;
   padding: 12px;
   font-size: 16px;
@@ -363,11 +363,11 @@ html,body{
 }
 
 .contact-form button:hover {
-  background-color: #2348cc;
+  background-color: #2A4759;
 }
 .footer{
     height: 200px;
-    background-color: #333;
+    background-color: #2A4759;
     display: flex;
     justify-content: center;
     gap:20px;
