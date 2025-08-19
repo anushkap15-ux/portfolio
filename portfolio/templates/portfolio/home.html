@@ -1,0 +1,302 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="{% static 'portfolio/css/home.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+      .nav-logo{
+        background-image: url("{% static 'portfolio/images/nav-logo.png' %}");
+      }
+      .herosection{
+        background-image: url("{% static 'portfolio/images/main-cover.png' %}");
+      }
+    </style>
+</head>
+<body>
+  <header>
+        <div class="navbar">
+            <div class="nav-logo" style="background-image: url('{{ hero.logo.url }}');"></div>
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'skill' %}">Skills</a>
+            <a href="{% url 'contact' %}">Contact</a>
+            <a href="{% url 'blog' %}">Blog</a>
+             <a href="{% url 'about' %}">About me</a>
+        </div>
+    </header>
+    <div class="herosection" style="background-image: url('{{ hero.cover_img.url }}');">
+        <div class="hero-heading">
+            <p>{{ hero.heading }}</p>    
+        </div>
+        <div class="hero-para">
+            <p>{{ hero.description }}</p>
+        </div>
+        <div class="check-work-button">
+            <a href="{% url 'work' %}">{{ hero.work_btn }}</a>
+        </div>
+        
+    </div> 
+   <div class="work">
+  <div class="head">
+    <div class="head-content">
+      <h1 class="work_heading">Work</h1>
+      <h3 class="worksub_heading">
+        <br>A curated selection of projects showcasing my ability to turn complex ideas into high-quality solutions — designed, developed, and delivered with precision, creativity, and measurable results.
+      </h3>
+    </div>
+  </div>
+
+  <section class="projects">
+    {% for w in works %}
+      <div class="card">
+        <h3>{{ w.heading }}</h3>
+        <p><br>{{ w.description }}</p>
+        <div class="button-in-card">
+          {% if w.source_code_link %}
+            <div class="git">
+              <a href="{{ w.source_code_link }}" target="_blank">
+                <i class="fa-brands fa-github"></i>
+              </a>
+            </div>
+          {% endif %}
+          {% if w.demo_link %}
+            <a href="{{ w.demo_link }}" target="_blank">See more</a>
+          {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+  </section>
+</div>
+
+        <section class="about-section">
+        <div class="about-card">
+            <div class="profile-img">
+                <img src='{% static "portfolio/images/about2.png" %}' alt="Profile Image">
+            </div>
+            <h2>Anushka Pandey</h2>
+            <div class="divider"></div>
+            <p class="job-title">Full Stack Developer</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fa-brands fa-github"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+
+        <div class="about-content">
+            <h1>About</h1>
+            <p class="intro">
+               Diploma in Computer Science from Government Women’s Polytechnic College, Bhopal, and currently pursuing a B.Tech in Computer Science and Engineering at UIT-RGPV, Bhopal — building a strong foundation in technology and innovation.
+            </p>
+            <div class="buttons">
+                <a href="https://rxresu.me/anushkap15-ux/anushka-resume" class="btn yellow">RESUME</a>
+                <a href="home.html" class="btn outline">PORTFOLIO</a>
+            </div>
+            <p class="description">
+              </h3>A front-end developer passionate about creating clean, responsive websites.
+Skilled in HTML, CSS, Java, PL/SQL, and familiar with Python and C, I enjoy translating ideas into functional designs.
+Currently improving my JavaScript skills, I plan to expand into backend development and AI/ML.
+I’m focused on becoming a well-rounded developer while exploring creative design.
+            </p>
+        </div>
+    </section>
+
+
+    
+<section class="skills-section">
+  <div class="skills-container">
+    <div class="skills-left">
+      <h2 class="skills-title">Professional Skills</h2>
+      <p class="skills-description">
+        A blend of technical knowledge and creative thinking that allows me to build clean, efficient, and user-friendly digital solutions.
+      </p>
+
+      <div class="skill-bar">
+        <div class="label">
+          <i class="fa-brands fa-html5"></i> HTML5 <span>95%</span>
+        </div>
+        <div class="bar"><div class="fill" style="width: 95%;"></div></div>
+      </div>
+
+      <div class="skill-bar">
+        <div class="label">
+          <i class="fa-brands fa-css3-alt"></i> CSS3 <span>90%</span>
+        </div>
+        <div class="bar"><div class="fill" style="width: 90%;"></div></div>
+      </div>
+
+      <div class="skill-bar">
+        <div class="label">
+          <i class="fa-brands fa-js"></i> JavaScript <span>70%</span>
+        </div>
+        <div class="bar"><div class="fill" style="width: 70%;"></div></div>
+      </div>
+
+      <div class="skill-bar">
+        <div class="label">
+          <i class="fa-brands fa-java"></i> Java <span>75%</span>
+        </div>
+        <div class="bar"><div class="fill" style="width: 75%;"></div></div>
+      </div>
+
+      <div class="skill-bar">
+        <div class="label">
+          <i class="fa-brands fa-python"></i> Python <span>65%</span>
+        </div>
+        <div class="bar"><div class="fill" style="width: 65%;"></div></div>
+      </div>
+
+      <div class="skill-bar">
+        <div class="label">
+          <i class="fa-solid fa-c"></i> C <span>70%</span>
+        </div>
+        <div class="bar"><div class="fill" style="width: 70%;"></div></div>
+      </div>
+
+      <div class="skill-bar">
+        <div class="label">
+          <i class="fa-brands fa-github"></i> Git & GitHub <span>80%</span>
+        </div>
+        <div class="bar"><div class="fill" style="width: 80%;"></div></div>
+      </div>
+
+      <div class="skill-bar">
+        <div class="label">
+          <i class="fa-solid fa-database"></i> PLSQL <span>60%</span>
+        </div>
+        <div class="bar"><div class="fill" style="width: 60%;"></div></div>
+      </div>
+    </div>
+
+    <div class="skills-right">
+      <img src="{% static 'portfolio/images/skills2.png' %}" alt="Skills Image" class="skills-image" />
+    </div>
+  </div>
+</section>
+
+
+ <div class="faq">
+    <main class="faq-wrap">
+    <div class="faq-header">
+      <div>
+        <div class="title">Frequently asked</div>
+        <div class="subtitle">Simple answers to help you know me and my projects better.</div>
+      </div>
+    </div>
+
+    <section class="faq-card" aria-label="Frequently asked questions">
+      <details open>
+        <summary>
+          <div class="question">What services do you offer?</div>
+          <div class="chev" aria-hidden>
+            <svg width="12" height="12" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </summary>
+        <div class="answer">I design and build responsive websites and web apps — UI/UX, frontend (HTML/CSS/JS/React) and light backend integration. For larger teams I also help with design handoffs and component libraries.</div>
+      </details>
+
+      <details>
+        <summary>
+          <div class="question">How long does a typical project take?</div>
+          <div class="chev" aria-hidden>
+            <svg width="12" height="12" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </summary>
+        <div class="answer">Small landing pages: 1–2 weeks. Medium projects: 3–6 weeks. Larger apps: 2+ months. Exact timeline depends on scope and availability — best way is to <strong>start with a brief</strong> and I'll respond with an estimated schedule.</div>
+      </details>
+
+      <details>
+        <summary>
+          <div class="question">What's your tech stack?</div>
+          <div class="chev" aria-hidden>
+            <svg width="12" height="12" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </summary>
+        <div class="answer">I primarily use modern HTML5, CSS3 (with BEM or utility classes), JavaScript (ES6+), React and occasionally Next.js for static/SSR needs. I integrate with REST APIs and Firebase for quick prototypes.</div>
+      </details>
+
+      <details>
+        <summary>
+          <div class="question">How do I get a quote?</div>
+          <div class="chev" aria-hidden>
+            <svg width="12" height="12" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </summary>
+        <div class="answer">Share a short brief — goals, references, core pages/features and your ideal timeline. Email or the contact form both work. I usually reply within 48 hours with scope options and a ballpark estimate.</div>
+      </details>
+
+      <details>
+        <summary>
+          <div class="question">Do you provide maintenance after launch?</div>
+          <div class="chev" aria-hidden>
+            <svg width="12" height="12" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </summary>
+        <div class="answer">Yes — I offer hourly or monthly maintenance packages for updates, bug fixes and small feature work. Pricing depends on response time and monthly hours required.</div>
+      </details>
+
+      <details>
+        <summary>
+          <div class="question">Can you sign an NDA?</div>
+          <div class="chev" aria-hidden>
+            <svg width="12" height="12" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </summary>
+        <div class="answer">Absolutely. I'm comfortable signing NDAs for both one-off projects and long-term partnerships.</div>
+      </details>
+    </section>
+
+    <script src="script.js"></script>
+</div>
+  </main>
+   
+
+
+
+<section class="contact-section">
+  <div class="contact-card">
+    <div class="contact-photo">
+     <img src='{% static "portfolio/images/about2.png" %}' alt="Profile Image">
+    </div>
+    <h2>Anushka Pandey</h2>
+    <p class="role"><br>full stack Developer</p>
+    <div class="social-icons">
+       <a href="https://github.com/anushkap15-ux"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.instagram.com/anushkapandey15._/"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/anushka-pandey-3a5711256"><i class="fa-brands fa-linkedin"></i></a>
+    </div>
+  </div>
+  <div class="contact-info">
+    <h1>Contact Me</h1>
+    <p>If you'd like to work together, collaborate on a project, or just say hello, feel free to reach out!</p>
+
+    <div class="contact-buttons">
+     <p><i class="fa-solid fa-location-dot"></i> Bhopal, India
+    </div>
+
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit" class="btn primary">Send Message</button>
+    </form>
+  </div>
+</section>
+  <footer>
+    <div class="footer">
+        <a href="https://github.com/anushkap15-ux"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.instagram.com/anushkapandey15._/"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/anushka-pandey-3a5711256"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+        <div class="copyright">
+    &copy; Made by Anushka Pandey
+  </div>
+  </footer>
+
+
+</section>
+</body>
+</html>

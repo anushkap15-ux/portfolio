@@ -1,0 +1,189 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="{% static 'portfolio/css/skills.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+      .nav-logo{
+        background-image: url("{% static 'portfolio/images/nav-logo.png' %}");
+      }
+    </style>
+</head>
+<body>
+  <header>
+        <div class="navbar">
+            <div class="nav-logo"></div>
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'skill' %}">Skills</a>
+            <a href="{% url 'contact' %}">Contact</a>
+            <a href="{% url 'blog' %}">Blog</a>
+             <a href="{% url 'about' %}">About me</a>
+        </div>
+    </header>
+
+    
+<section class="skills-section">
+  <div class="skills-container">
+    <div class="skills-left">
+      <h2 class="skills-title">Professional Skills</h2>
+      <p class="skills-description">
+        A blend of technical knowledge and creative thinking that allows me to build clean, efficient, and user-friendly digital solutions.
+      </p>
+
+      <div class="skill-bar">
+        <div class="label">
+          <i class="fa-brands fa-html5"></i> HTML5 <span>95%</span>
+        </div>
+        <div class="bar"><div class="fill" style="width: 95%;"></div></div>
+      </div>
+
+      <div class="skill-bar">
+        <div class="label">
+          <i class="fa-brands fa-css3-alt"></i> CSS3 <span>90%</span>
+        </div>
+        <div class="bar"><div class="fill" style="width: 90%;"></div></div>
+      </div>
+
+      <div class="skill-bar">
+        <div class="label">
+          <i class="fa-brands fa-js"></i> JavaScript <span>70%</span>
+        </div>
+        <div class="bar"><div class="fill" style="width: 70%;"></div></div>
+      </div>
+
+      <div class="skill-bar">
+        <div class="label">
+          <i class="fa-brands fa-java"></i> Java <span>75%</span>
+        </div>
+        <div class="bar"><div class="fill" style="width: 75%;"></div></div>
+      </div>
+
+      <div class="skill-bar">
+        <div class="label">
+          <i class="fa-brands fa-python"></i> Python <span>65%</span>
+        </div>
+        <div class="bar"><div class="fill" style="width: 65%;"></div></div>
+      </div>
+
+      <div class="skill-bar">
+        <div class="label">
+          <i class="fa-solid fa-c"></i> C <span>70%</span>
+        </div>
+        <div class="bar"><div class="fill" style="width: 70%;"></div></div>
+      </div>
+
+      <div class="skill-bar">
+        <div class="label">
+          <i class="fa-brands fa-github"></i> Git & GitHub <span>80%</span>
+        </div>
+        <div class="bar"><div class="fill" style="width: 80%;"></div></div>
+      </div>
+
+      <div class="skill-bar">
+        <div class="label">
+          <i class="fa-solid fa-database"></i> PLSQL <span>60%</span>
+        </div>
+        <div class="bar"><div class="fill" style="width: 60%;"></div></div>
+      </div>
+    </div>
+
+    <div class="skills-right">
+      <img src="{% static 'portfolio/images/skills2.png' %}" alt="Skills Image" class="skills-image" />
+    </div>
+  </div>
+</section>
+
+
+ <div class="faq">
+    <main class="faq-wrap">
+    <div class="faq-header">
+      <div>
+        <div class="title">Frequently asked</div>
+        <div class="subtitle">Simple answers to help you know me and my projects better.</div>
+      </div>
+    </div>
+
+    <section class="faq-card" aria-label="Frequently asked questions">
+      <details open>
+        <summary>
+          <div class="question">What services do you offer?</div>
+          <div class="chev" aria-hidden>
+            <svg width="12" height="12" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </summary>
+        <div class="answer">I design and build responsive websites and web apps — UI/UX, frontend (HTML/CSS/JS/React) and light backend integration. For larger teams I also help with design handoffs and component libraries.</div>
+      </details>
+
+      <details>
+        <summary>
+          <div class="question">How long does a typical project take?</div>
+          <div class="chev" aria-hidden>
+            <svg width="12" height="12" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </summary>
+        <div class="answer">Small landing pages: 1–2 weeks. Medium projects: 3–6 weeks. Larger apps: 2+ months. Exact timeline depends on scope and availability — best way is to <strong>start with a brief</strong> and I'll respond with an estimated schedule.</div>
+      </details>
+
+      <details>
+        <summary>
+          <div class="question">What's your tech stack?</div>
+          <div class="chev" aria-hidden>
+            <svg width="12" height="12" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </summary>
+        <div class="answer">I primarily use modern HTML5, CSS3 (with BEM or utility classes), JavaScript (ES6+), React and occasionally Next.js for static/SSR needs. I integrate with REST APIs and Firebase for quick prototypes.</div>
+      </details>
+
+      <details>
+        <summary>
+          <div class="question">How do I get a quote?</div>
+          <div class="chev" aria-hidden>
+            <svg width="12" height="12" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </summary>
+        <div class="answer">Share a short brief — goals, references, core pages/features and your ideal timeline. Email or the contact form both work. I usually reply within 48 hours with scope options and a ballpark estimate.</div>
+      </details>
+
+      <details>
+        <summary>
+          <div class="question">Do you provide maintenance after launch?</div>
+          <div class="chev" aria-hidden>
+            <svg width="12" height="12" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </summary>
+        <div class="answer">Yes — I offer hourly or monthly maintenance packages for updates, bug fixes and small feature work. Pricing depends on response time and monthly hours required.</div>
+      </details>
+
+      <details>
+        <summary>
+          <div class="question">Can you sign an NDA?</div>
+          <div class="chev" aria-hidden>
+            <svg width="12" height="12" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </summary>
+        <div class="answer">Absolutely. I'm comfortable signing NDAs for both one-off projects and long-term partnerships.</div>
+      </details>
+    </section>
+
+    <script src="script.js"></script>
+</div>
+  </main>
+
+
+
+  <footer>
+    <div class="footer">
+        <a href="https://github.com/anushkap15-ux"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.instagram.com/anushkapandey15._/"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/anushka-pandey-3a5711256"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+        <div class="copyright">
+    &copy; Made by Anushka Pandey
+  </div>
+  </footer>
+</body>
+</html>
