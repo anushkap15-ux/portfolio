@@ -126,3 +126,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'server95-90.liteserverdns.in'  # Replace with your email provider's SMTP server
+EMAIL_PORT = 465  # Common port for SMTP
+EMAIL_USE_SSL = True  # Use SSL for secure connection
+EMAIL_HOST_USER = 'connect@roshandamor.site'
+EMAIL_HOST_PASSWORD = 'Roshan@1410'  # Replace with your email password
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
