@@ -56,8 +56,6 @@ class About(models.Model):
         return self.name
 
 
-from django.db import models
-
 class Skill(models.Model):
     ICON_CHOICES = [
         ("fa-brands fa-html5", "HTML5"),
