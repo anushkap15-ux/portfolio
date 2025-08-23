@@ -1,5 +1,4 @@
 import os, sys
-import pymysql
 from pathlib import Path
 from dotenv import load_dotenv
 
