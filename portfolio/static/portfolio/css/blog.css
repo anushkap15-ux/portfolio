@@ -1,44 +1,11 @@
+/* ========================================= */
+/* =========== General Styles ============== */
+/* ========================================= */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-.navbar{
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    top:0;
-    left:0;
-    width: 100%;
-    height: 80px;
-    line-height: 80px;
-    background-color: #c9ada7;
-    font-size: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    font-family: Arial, Helvetica, sans-serif;
-    
-}
-.nav-logo{
-    width:150px;
-    height: 150px;
-    background-image: url(nav-logo.png);
-    background-size: cover;
-    margin-left: 2px;
-}
-.navbar a{
-    text-decoration: none;
-    color: black;
-    color: white;
-    opacity: 0.7;
-    margin-left: 100px;
-    margin-bottom: 1px;
-    margin-right: 2px;
-}
-.navbar a:hover{
-  color: #8D742F;
-    opacity: 0.7;
 }
 
 body {
@@ -46,13 +13,59 @@ body {
   background: #f4f4f4;
   color: #333;
   line-height: 1.6;
+  overflow-x: hidden; /* Prevents horizontal scroll */
 }
+
+/* ========================================= */
+/* ============= Navbar Styles ============= */
+/* ========================================= */
+
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background-color: #c9ada7;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Consistent alignment */
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0 20px; /* Add padding for spacing */
+}
+
+.nav-logo {
+    width: 150px;
+    height: 150px;
+    background-image: url(nav-logo.png);
+    background-size: cover;
+    margin-right: auto; /* Pushes other nav items to the side */
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    opacity: 0.7;
+    margin: 0 20px; /* Simplified margin */
+    transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+.navbar a:hover {
+  color: #8D742F;
+  opacity: 1;
+}
+
+/* ========================================= */
+/* ============= Header Styles ============= */
+/* ========================================= */
 
 header {
   text-align: center;
   padding: 2rem 1rem;
   background: #001233;
   color: white;
+  margin-top: 80px; /* Pushes header down below the absolute navbar */
 }
 
 header h1 {
@@ -64,23 +77,29 @@ header p {
   margin-top: 0.5rem;
 }
 
+/* ========================================= */
+/* ============ Blog Styles ================ */
+/* ========================================= */
+
 .blog-container {
-    height: 1000px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   padding: 2rem;
   gap: 2rem;
+  background-color: #f4f4f4; /* Ensures background color consistency */
 }
 
 .blog-post {
   background: white;
-  height: 400px;
   border-radius: 8px;
   padding: 1.5rem;
+  width: 100%; /* Make it full width by default, max-width will control it */
   max-width: 400px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   transition: transform 0.3s;
+  display: flex;
+  flex-direction: column; /* Ensures content inside aligns properly */
 }
 
 .blog-post:hover {
@@ -100,7 +119,7 @@ header p {
 
 .blog-post a {
   display: inline-block;
-  margin-top: 1rem;
+  margin-top: auto; /* Pushes the 'Read More' link to the bottom */
   color: #0077cc;
   text-decoration: none;
   font-weight: bold;
@@ -110,26 +129,110 @@ header p {
   text-decoration: underline;
 }
 
-.footer{
+/* ========================================= */
+/* ============ Footer Styles ============== */
+/* ========================================= */
+
+.footer {
     height: 200px;
-    background-color:#c9ada7;
+    background-color: #c9ada7;
     display: flex;
+    flex-direction: column; /* Stack icons and copyright */
     justify-content: center;
-    gap:20px;
+    gap: 20px;
     align-items: center;
+    padding: 20px;
 }
-.footer i{
+
+.footer .social-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.footer i {
     font-size: 30px;
     color: white;
-   padding: 2%;
+    transition: opacity 0.3s ease;
 }
-.copyright {
-    font-size: 20px;
-    margin-top: -55px; /* adjusts spacing if needed */
-   text-align: center;
-   color: white;
-}
-.footer i:hover{
-    color: white;
+
+.footer i:hover {
     opacity: 0.6;
+}
+
+.copyright {
+    font-size: 18px;
+    text-align: center;
+    color: white;
+}
+
+
+/* ========================================= */
+/* =========== Responsive Styles =========== */
+/* ========================================= */
+
+/* ====== For Tablets (e.g., iPads) ====== */
+@media (max-width: 992px) {
+    .nav-logo {
+        display: none; /* Hide logo to save space */
+    }
+
+    .navbar {
+        justify-content: center; /* Center nav links */
+    }
+
+    .navbar a {
+        margin: 0 15px;
+        font-size: 18px;
+    }
+
+    .blog-container {
+        padding: 2rem 1rem; /* Reduce padding on the sides */
+    }
+
+    .blog-post {
+        max-width: 320px; /* Adjust max-width for smaller screens */
+    }
+}
+
+/* ====== For Mobile Phones ====== */
+@media (max-width: 768px) {
+    .navbar {
+        position: relative; /* Change position to make it part of the page flow */
+        height: auto;
+        flex-direction: column; /* Stack links vertically */
+        padding: 10px 0;
+    }
+
+    .navbar a {
+        padding: 10px 0;
+        width: 100%;
+        text-align: center;
+        margin: 0;
+    }
+
+    header {
+        margin-top: 0; /* Remove margin as navbar is no longer absolute */
+        padding: 1.5rem 1rem;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .blog-container {
+        padding: 1.5rem 1rem;
+    }
+
+    .blog-post {
+        max-width: 100%; /* Allow blog posts to take the full width */
+    }
+
+    .footer {
+        height: auto; /* Let footer height be dynamic */
+        padding: 30px 10px;
+    }
+    
+    .copyright {
+        font-size: 14px;
+    }
 }
