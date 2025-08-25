@@ -6,6 +6,7 @@
 html,body{
     margin: 0;
     padding: 0;
+    overflow-x: hidden; /* Prevents horizontal scroll */
 }
 .nav-logo{
     width:150px;
@@ -46,13 +47,14 @@ html,body{
 }
 
 /** herosection**/
-  .herosection{
+.herosection{
     height : 800px;
     background-image: url(main-cover_isnet-anime.png);
     background-size: cover;
+    background-position: center; /* Center the background image */
     background-color: #f2e9e4;
-     }
-    .hero-heading {
+}
+.hero-heading {
     position: absolute; /* place text inside */
     top: 50%;
     left: 30%;
@@ -64,7 +66,7 @@ html,body{
     font-weight: bold;
 }
 .hero-para{
-    height: 40px;
+    height: auto; /* Allow height to adjust */
     width:800px ;
     position: absolute; /* place text inside */
     top: 63%;
@@ -80,117 +82,26 @@ html,body{
     position: absolute;
     left: 7%;
     top:80%;
-     height: 20px;
-     background-color: blanchedalmond;
-     border: 2px solid blanchedalmond ;
-     font-family: Arial, Helvetica, sans-serif;
+    height: auto; /* Adjust height automatically */
+    padding: 10px 15px; /* Add some padding */
+    background-color: blanchedalmond;
+    border: 2px solid blanchedalmond ;
+    font-family: Arial, Helvetica, sans-serif;
 }
 .check-work-button a{
     font-size: 20px;
     color: #8D742F;
     text-decoration: none;
-        font-weight: bold;
+    font-weight: bold;
 }
 .check-work-button a:hover{
     text-decoration: underline;
     color: #8D742F;
     opacity: 0.7;
-
-}
-/* *work*
-.work{
-    position: relative;
-    text-align: center;
-  background-color: #f2e9e4; 
 }
 
-.projects {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
-  justify-content: left;
-  margin-top: 50px;
-}
-
-.card {
-  background: linear-gradient(135deg, #FFDEE9, #ffe5d9);
-  border-radius: 16px;
-  padding: 20px;
-  width: 300px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
-  text-align: center;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-}
-
-.card h3 {
-  font-size: 1.3rem;
-  color: #333;
-  margin-bottom: 10px;
-}
-
-.card p {
-  font-size: 0.95rem;
-  color: #555;
-  line-height: 1.5;
-}
-
-.card a {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 10px 18px;
-  background-color: #ffcc00;
-  color: white;
-  text-decoration: none;
-  font-weight: 600;
-  border-radius: 8px;
-  transition: background-color 0.2s ease;
-}
-
-.card a:hover {
-  background-color: #ffcc00;
-  opacity: 0.8;
-}
-.git{
-  height: 4px;
-  width: 10px;
-  border: 1px solid black;
-}
-.button-in-card{
-  display: flex;
-  justify-content: space-evenly;
-}
-
-/* Mobile responsive */
-/* @media (max-width: 768px) {
-  .projects {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-.content_card1{
-    width : 200px;
-    height : 300px;
-    font-family: Arial Narrow;
-}
-.card-box:hover{
-    background-color: #f06292;
-    opacity:0.7;
-    transform: scale(1.05); /* makes it pop */
-    /* box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3); 
-    border: 2px solid rgba(13, 27, 42, 0.4);
-    
-}
-.head{
-  display: flex;
-  direction: column;
-
-}  */
-  .work {
+/** work **/
+.work {
   display: flex; /* split left and right */
   align-items: center;
   background-color: #f2e9e4;
@@ -278,24 +189,15 @@ html,body{
   opacity: 0.8;
 }
 
-/* Mobile */
-@media (max-width: 768px) {
-  .work {
-    flex-direction: column;
-  }
-  .projects {
-    grid-template-columns: 1fr;
-  }
-}
-
 /** about section**/
 .about-section {
     display: flex;
-    justify-content: left;
+    justify-content: center; /* Centered for better tablet view */
     align-items: flex-start;
     gap: 90px;
     padding: 120px 50px 50px; /* extra top padding so navbar doesn't overlap */
     background-color: #f2e9e4;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
 }
 
 .about-card {
@@ -303,7 +205,7 @@ html,body{
     padding: 30px 20px;
     border-radius: 5px;
     text-align: center;
-    width: 700px;
+    width: 300px; /* Adjusted width */
     box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
 }
 
@@ -404,9 +306,6 @@ html,body{
     font-size: 15px ;
 }
 
-
-
-
 /**skills**/
 .skills-section {
   width: 100%;
@@ -414,6 +313,7 @@ html,body{
   font-family: Arial, sans-serif;
   background-color:#f2e9e4;
   color: black;
+  box-sizing: border-box; /* Ensures padding is included in width */
 }
 
 .skills-container {
@@ -426,7 +326,7 @@ html,body{
 
 .skills-left {
   flex: 1;
-  max-width: 500px;
+  min-width: 300px; /* Minimum width for skill bars */
 }
 
 .skills-title {
@@ -485,16 +385,17 @@ html,body{
   display: flex;
   justify-content: center;
   align-items: center;
+  min-width: 300px; /* Minimum width for the image container */
 }
 
 .skills-image {
- width : 630px;
-  height: 600px;
+ width : 100%; /* Make image responsive */
+  max-width: 630px;
+  height: auto; /* Maintain aspect ratio */
   border-radius: 10px;
 }
 
-
-
+/** FAQ **/
 :root {
   --bg: #ffffff;
   --card: #fbfbff;
@@ -504,10 +405,6 @@ html,body{
   --radius: 14px;
   --max-width: 740px;
   font-family: 'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-}
-
-html, body {
-  height: 100%;
 }
 
 .faq {
@@ -535,10 +432,9 @@ html, body {
 }
 
 .title {
-  font-size: 20px;
+  font-size: 40px;
   font-weight: 600;
   line-height: 1.1;
-  font-size: 40px;
 }
 
 .subtitle {
@@ -559,7 +455,6 @@ html, body {
    background: linear-gradient(135deg, #FFDEE9, #ffe5d9);
 }
 
-/* FAQ items using native <details> */
 details {
   border-radius: 12px;
   margin: 8px 0;
@@ -577,7 +472,6 @@ summary {
   border-radius: 10px;
 }
 
-/* remove default triangle marker */
 summary::-webkit-details-marker {
   display: none;
 }
@@ -617,33 +511,6 @@ summary:hover {
   border-top: 1px solid rgba(15, 23, 42, 0.03);
   margin-top: 6px;
 }
-
-/* small screen tweaks */
-@media (max-width: 520px) {
-  .title {
-    font-size: 18px;
-  }
-  .chev {
-    width: 34px;
-    height: 34px;
-  }
-}
-
-/* Utility: inline code style */
-.kbd {
-  background: #111827;
-  color: #fff;
-  padding: 4px 8px;
-  border-radius: 6px;
-  font-size: 12px;
-  font-weight: 600;
-}
-
-
-
-
-
-
 
 /** contacts**/
 .contact-section {
@@ -693,12 +560,6 @@ summary:hover {
   letter-spacing: 1px;
 }
 
-.social-icons {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-}
-
 .contact-info {
   max-width: 500px;
 }
@@ -744,17 +605,6 @@ summary:hover {
   background-color: #e0a800;
 }
 
-.secondary {
-  border: 2px solid #333;
-  color: #333;
-  background: none;
-}
-
-.secondary:hover {
-  background-color: #333;
-  color: #fff;
-}
-
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -767,6 +617,8 @@ summary:hover {
   border-radius: 6px;
   border: 1px solid #ccc;
   font-size: 0.9rem;
+  width: 100%; /* Ensure inputs take full width */
+  box-sizing: border-box;
 }
 
 .contact-form textarea {
@@ -778,10 +630,6 @@ summary:hover {
   align-self: flex-start;
 }
 
-
-
-
-/* footer */
 .footer{
     height: 200px;
     background-color:#c9ada7;
@@ -789,6 +637,7 @@ summary:hover {
     justify-content: center;
     gap:20px;
     align-items: center;
+    flex-wrap: wrap; /* Allow icons to wrap */
 }
 .footer i{
     font-size: 30px;
@@ -797,11 +646,218 @@ summary:hover {
 }
 .copyright {
     font-size: 20px;
-    margin-top: -55px; /* adjusts spacing if needed */
+    margin-top: -55px;
    text-align: center;
    color: white;
+   width: 100%; /* Ensure it takes full width */
 }
 .footer i:hover{
     color: white;
     opacity: 0.6;
 }
+
+/* ========================================= */
+/* =========== Responsive Styles =========== */
+/* ========================================= */
+
+/* For Tablets and smaller devices */
+@media (max-width: 992px) {
+    .navbar {
+        justify-content: center; /* Center nav items */
+        padding: 0 20px;
+    }
+
+    .navbar a {
+        margin-left: 20px; /* Reduce margin between nav items */
+        font-size: 18px;
+    }
+
+    .nav-logo {
+        display: none; /* Hide logo on smaller screens to save space */
+    }
+
+    .hero-heading {
+        font-size: 70px;
+        left: 50%;
+        width: 90%;
+        text-align: center;
+    }
+
+    .hero-para {
+        font-size: 20px;
+        left: 50%;
+        width: 80%;
+        top: 65%;
+        text-align: center;
+    }
+
+    .check-work-button {
+        left: 50%;
+        transform: translateX(-50%); /* Center the button */
+        top: 78%;
+    }
+    
+    .work {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    .head-content {
+        width: 100%;
+        align-items: center;
+    }
+
+    .projects {
+        grid-template-columns: 1fr; /* Stack project cards */
+    }
+
+    .about-section {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        padding: 80px 20px 40px;
+    }
+    
+    .about-content {
+        text-align: center;
+    }
+
+    .skills-section {
+        padding: 40px 20px;
+    }
+
+    .skills-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+    
+    .skills-left, .skills-right {
+        max-width: 100%;
+    }
+
+    .contact-section {
+        padding: 2rem 1rem;
+    }
+}
+
+
+/* For Mobile phones */
+@media (max-width: 768px) {
+    .navbar {
+        height: auto;
+        flex-direction: column;
+        line-height: 50px;
+        padding: 10px 0;
+    }
+
+    .navbar a {
+        margin: 0;
+        padding: 5px 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .herosection {
+        height: 600px;
+    }
+
+    .hero-heading {
+        font-size: 48px;
+    }
+
+    .hero-para {
+        font-size: 16px;
+        width: 90%;
+        top: 68%;
+    }
+
+    .check-work-button {
+        top: 82%;
+        font-size: 18px;
+    }
+
+    .head h1 {
+        font-size: 36px;
+    }
+
+    .head h3 {
+        font-size: 1rem;
+    }
+
+    .about-content h1 {
+        font-size: 40px;
+    }
+
+    .about-content .intro {
+        font-size: 16px;
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .btn {
+        width: 80%;
+        margin-right: 0;
+    }
+    
+    .skills-title {
+        font-size: 28px;
+        text-align: center;
+    }
+
+    .skills-description {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .faq-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .title {
+        font-size: 28px;
+    }
+    
+    .contact-info h1 {
+        font-size: 2rem;
+        text-align: center;
+    }
+    
+    .contact-info p {
+        text-align: center;
+    }
+
+    .contact-buttons {
+        justify-content: center;
+    }
+    
+    .contact-form button {
+        align-self: center;
+    }
+    
+    .footer {
+        padding: 20px 0;
+    }
+    
+    .copyright {
+        margin-top: 10px;
+        position: static; /* Reset position */
+        font-size: 16px;
+    }
+}
+
+/* ### How to Use It:
+
+1.  **Copy** the entire CSS code block above.
+2.  **Open** your `home.css` file.
+3.  **Delete** all the existing content in your `home.css` file.
+4.  **Paste** the new, updated code and save the file.
+
+Your website should now be responsive and look great on desktops, tablets, and mobile devices. */
