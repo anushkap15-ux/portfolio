@@ -5,7 +5,7 @@ from django.db import models
 class Hero(models.Model):
     logo = models.ImageField(upload_to='skill_logos/', blank=True, null=True)
     heading = models.CharField(max_length=50)
-    description = models.TextField(blank=True)
+    description = models.TextField(max_length=1000)
     cover_img = models.ImageField(upload_to='cover_photo/',blank=True)
     work_btn = models.CharField(max_length=20)
     def __str__(self):

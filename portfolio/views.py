@@ -9,9 +9,9 @@ from .models import FAQ, Hero, SkillsSection, Work, WorkSection, About, Skill
 def home(request):
     hero = Hero.objects.first()
     work_section = WorkSection.objects.first()
-    works = Work.objects.all()[:3]
+    works = Work.objects.all()
     about = About.objects.first() 
-    skills = Skill.objects.all()[:3]
+    skills = Skill.objects.all()
     skillsdes = SkillsSection.objects.first()
     faq = FAQ.objects.all()
 

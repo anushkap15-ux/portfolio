@@ -1,4 +1,3 @@
-
 *{
     padding: 0px;
     margin: 0px;
@@ -7,6 +6,7 @@
 html,body{
     margin: 0;
     padding: 0;
+    overflow-x: hidden; /* Prevents horizontal scroll */
 }
 .nav-logo{
     width:150px;
@@ -162,12 +162,6 @@ html,body{
     font-size: 15px ;
 }
 
-
-
-
-
-
-
 :root {
   --bg: #ffffff;
   --card: #fbfbff;
@@ -177,10 +171,6 @@ html,body{
   --radius: 14px;
   --max-width: 740px;
   font-family: 'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-}
-
-html, body {
-  height: 100%;
 }
 
 .faq {
@@ -208,10 +198,9 @@ html, body {
 }
 
 .title {
-  font-size: 20px;
+  font-size: 40px;
   font-weight: 600;
   line-height: 1.1;
-  font-size: 40px;
 }
 
 .subtitle {
@@ -232,7 +221,6 @@ html, body {
    background: linear-gradient(135deg, #FFDEE9, #ffe5d9);
 }
 
-/* FAQ items using native <details> */
 details {
   border-radius: 12px;
   margin: 8px 0;
@@ -250,7 +238,6 @@ summary {
   border-radius: 10px;
 }
 
-/* remove default triangle marker */
 summary::-webkit-details-marker {
   display: none;
 }
@@ -302,7 +289,6 @@ summary:hover {
   }
 }
 
-/* Utility: inline code style */
 .kbd {
   background: #111827;
   color: #fff;
@@ -311,8 +297,6 @@ summary:hover {
   font-size: 12px;
   font-weight: 600;
 }
-
-
 
 .footer{
     height: 200px;
@@ -329,11 +313,124 @@ summary:hover {
 }
 .copyright {
     font-size: 20px;
-    margin-top: -55px; /* adjusts spacing if needed */
+    margin-top: -55px;
    text-align: center;
    color: white;
 }
 .footer i:hover{
     color: white;
     opacity: 0.6;
+}
+
+/* ========================================= */
+/* =========== Responsive Styles =========== */
+/* ========================================= */
+
+/* For Tablets and smaller devices */
+@media (max-width: 992px) {
+    .navbar {
+        justify-content: center;
+        padding: 0 20px;
+    }
+
+    .navbar a {
+        margin-left: 20px;
+        font-size: 18px;
+    }
+
+    .nav-logo {
+        display: none;
+    }
+
+    .about-section {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center;    /* Center items horizontally */
+        gap: 40px;
+        padding: 100px 30px 40px;
+    }
+
+    .about-card {
+        width: 100%;
+        max-width: 450px; /* Give a max-width for tablets */
+        height: auto; /* Let height adjust to content */
+    }
+
+    .about-content {
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .about-content h1 {
+        font-size: 48px;
+    }
+}
+
+/* For Mobile phones */
+@media (max-width: 768px) {
+    .navbar {
+        height: auto;
+        flex-direction: column;
+        line-height: 50px;
+        padding: 10px 0;
+        position: static; /* Let it be part of the page flow */
+    }
+
+    .navbar a {
+        margin: 0;
+        padding: 5px 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .about-section {
+        padding: 40px 20px; /* Adjust padding for mobile */
+    }
+
+    .about-card {
+        width: 100%;
+        max-width: 320px; /* Adjust max-width for phones */
+    }
+
+    .about-content h1 {
+        font-size: 40px;
+    }
+
+    .about-content .intro {
+        font-size: 16px;
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .btn {
+        width: 80%;
+        margin-right: 0;
+    }
+    
+    .faq-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .title {
+        font-size: 28px;
+    }
+
+    .footer {
+        height: auto;
+        padding: 30px 10px;
+        flex-wrap: wrap;
+    }
+    
+    .copyright {
+        margin-top: 20px;
+        position: static;
+        font-size: 16px;
+        width: 100%;
+    }
 }

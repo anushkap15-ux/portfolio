@@ -6,6 +6,7 @@
 html,body{
     margin: 0;
     padding: 0;
+    overflow-x: hidden; /* Prevents horizontal scroll */
 }
 /* nav-bar   */
 .nav-logo{
@@ -168,6 +169,8 @@ html,body{
   border-radius: 6px;
   border: 1px solid #ccc;
   font-size: 0.9rem;
+  width: 100%; /* Ensure inputs take full width */
+  box-sizing: border-box; /* Include padding in the width */
 }
 
 .contact-form textarea {
@@ -179,7 +182,7 @@ html,body{
   align-self: flex-start;
 }
 
-
+/* FAQ */
 :root {
   --bg: #ffffff;
   --card: #fbfbff;
@@ -189,10 +192,6 @@ html,body{
   --radius: 14px;
   --max-width: 740px;
   font-family: 'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-}
-
-html, body {
-  height: 100%;
 }
 
 .faq {
@@ -220,10 +219,9 @@ html, body {
 }
 
 .title {
-  font-size: 20px;
+  font-size: 40px;
   font-weight: 600;
   line-height: 1.1;
-  font-size: 40px;
 }
 
 .subtitle {
@@ -244,7 +242,6 @@ html, body {
    background: linear-gradient(135deg, #FFDEE9, #ffe5d9);
 }
 
-/* FAQ items using native <details> */
 details {
   border-radius: 12px;
   margin: 8px 0;
@@ -262,7 +259,6 @@ summary {
   border-radius: 10px;
 }
 
-/* remove default triangle marker */
 summary::-webkit-details-marker {
   display: none;
 }
@@ -324,9 +320,6 @@ summary:hover {
   font-weight: 600;
 }
 
-
-
-
 /* FOOTER */
 .footer{
     height: 200px;
@@ -335,19 +328,112 @@ summary:hover {
     justify-content: center;
     gap:20px;
     align-items: center;
+    padding: 20px 0; /* Add some padding */
+    flex-wrap: wrap; /* Allow items to wrap */
 }
 .footer i{
     font-size: 30px;
     color: white;
-   padding: 2%;
+   padding: 10px;
 }
 .copyright {
     font-size: 20px;
-    margin-top: -55px; /* adjusts spacing if needed */
+    margin-top: -55px;
    text-align: center;
    color: white;
+   width: 100%; /* Ensure it spans the full width for proper centering */
 }
 .footer i:hover{
     color: white;
     opacity: 0.6;
+} 
+
+/* ========================================= */
+/* =========== Responsive Styles =========== */
+/* ========================================= */
+
+/* For Tablets and smaller devices */
+@media (max-width: 992px) {
+    .navbar {
+        justify-content: center;
+        padding: 0 20px;
+    }
+
+    .navbar a {
+        margin-left: 20px;
+        font-size: 18px;
+    }
+
+    .nav-logo {
+        display: none;
+    }
+
+    .contact-section {
+        padding: 2rem 1.5rem;
+        margin-top: 60px;
+    }
+    
+    .contact-info {
+        text-align: center;
+    }
+
+    .contact-info h1 {
+        font-size: 2.2rem;
+    }
+    
+    .contact-buttons {
+        justify-content: center;
+    }
+    
+    .contact-form button {
+        align-self: center;
+    }
+}
+
+/* For Mobile phones */
+@media (max-width: 768px) {
+    .navbar {
+        height: auto;
+        flex-direction: column;
+        line-height: 50px;
+        padding: 10px 0;
+        position: static; /* Make navbar part of the page flow */
+    }
+
+    .navbar a {
+        margin: 0;
+        padding: 5px 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .contact-section {
+        margin-top: 0; /* Remove top margin as navbar is static */
+        padding: 2rem 1rem;
+    }
+    
+    .contact-info h1 {
+        font-size: 2rem;
+    }
+
+    .faq-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .title {
+        font-size: 28px;
+    }
+    
+    .footer {
+        height: auto; /* Allow height to adjust */
+        padding: 30px 10px;
+    }
+    
+    .copyright {
+        margin-top: 20px; /* Adjust spacing from icons */
+        position: static;
+        font-size: 16px;
+    }
 }
