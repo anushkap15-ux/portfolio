@@ -58,8 +58,8 @@ def contact(request):
         form = MessageForm()
     return render(request, 'portfolio/contact.html')
 
-def blog(request):
-    return render(request, 'portfolio/blog.html')
+# def blog(request):
+#     return render(request, 'portfolio/blog.html')
 
 def about_view(request):
     about = About.objects.first()  # fetch the first record

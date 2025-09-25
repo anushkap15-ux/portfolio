@@ -98,7 +98,7 @@
     </div>
 </section>
 
-
+{% comment %} #<--------------------------skills----------------------------------- {% endcomment %}
     
 <section class="skills-section">
   <div class="skills-container">
@@ -108,14 +108,15 @@
        {{ skillsdes.description }}
       </p>
 
-      {% for skill in skills %}
-      <div class="skill-bar">
-        <div class="label">
-          <i class="{{ skill.icon }}"></i> {{ skill.name }} <span>{{ skill.percentage }}%</span>
-        </div>
-        <div class="bar"><div class="fill" style="width: {{ skill.percentage }}%;"></div></div>
+      <div class="icon-skills-grid">
+        {% for skill in skills %}
+          <div class="icon-skill-item">
+            <i class="{{ skill.icon }}"></i>
+            <p>{{ skill.name }}</p>
+          </div>
+        {% endfor %}
       </div>
-      {% endfor %}
+
     </div>
 
     <div class="skills-right">
